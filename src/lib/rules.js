@@ -1,6 +1,6 @@
-import sanitize from './sanitize';
+import sanitize from './sanitize'
 
-const preps = ['à', 'bez', 'dle', 'do', 'k', 'ke', 'kol', 'na', 'o', 'ob', 'od', 'ode', 'po', 'pod', 'při', 'pro', 's', 'u', 'v', 've', 'a', 'i', 'vo', 'vod', 'z', 'za', 'ze', 'ač'];
+const preps = ['à', 'bez', 'dle', 'do', 'k', 'ke', 'kol', 'na', 'o', 'ob', 'od', 'ode', 'po', 'pod', 'při', 'pro', 's', 'u', 'v', 've', 'a', 'i', 'vo', 'vod', 'z', 'za', 'ze', 'ač']
 const rules = [
   // Sanitize html
   text => sanitize(text),
@@ -15,7 +15,7 @@ const rules = [
   text => text.replace(/\s?(\(tm\))|\s?(\(тм\))/gi, '™'),
   // Units
   text => text.replace(/\s?(dm|um|mm|cm|m|km)\^\s?2/gi, '\xA0$1²'),
-  text => text.replace(/\s?(dm|um|mm|cm|m|km)\^\s?3/gi, '\xA0$1³')
-];
+  text => text.replace(/\s?(dm|um|mm|cm|m|km)\^\s?3/gi, '\xA0$1³'),
+]
 
-export default rules;
+export default rules
