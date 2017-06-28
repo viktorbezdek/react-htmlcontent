@@ -14,8 +14,8 @@ const config = {
   paths: {
     dist: path.join(ROOT_PATH, 'dist'),
     src: path.join(ROOT_PATH, 'src'),
-    docs: path.join(ROOT_PATH, 'docs'),
-    ghPages: path.join(ROOT_PATH, 'gh-pages')
+    docs: path.join(ROOT_PATH, 'docs-src'),
+    ghPages: path.join(ROOT_PATH, 'docs')
   },
   filename: 'boilerplate',
   library: 'Boilerplate'

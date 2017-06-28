@@ -25,7 +25,7 @@ function App() {
 ### Common Tasks
 
 * Developing - **npm start** - Runs the development server at *localhost:8080* and use Hot Module Replacement. You can override the default host and port through env (`HOST`, `PORT`).
-* Creating a version - **npm version <x.y.z>** - Updates */dist* and *package.json* with the new version and create a version tag to Git.
+* Creating a version - **npm version major|minor|patch|prerelease** - Updates */dist* and *package.json* with the new version and create a version tag to Git.
 * Publishing a version - **npm publish** - Pushes a new version to npm and updates the project site.
 
 ### Testing
