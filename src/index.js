@@ -2,11 +2,12 @@ import React from 'react';
 import { string } from 'prop-types';
 import rules from './lib/rules';
 
-const HTMLContent = ({ children, tagName }) => {
+const HTMLContent = (props) => {
+  const { children, tagName } = props
   const Tag = tagName;
-  const sanititzed = rules.reduce((r, f) => f(r), children);
+  const sanitized = rules.reduce((r, f) => f(r), children);
   return (
-    <Tag dangerouslySetInnerHTML={{ __html: sanititzed }} />
+    <Tag dangerouslySetInnerHTML={{ __html: sanitized }} />
   );
 };
 
