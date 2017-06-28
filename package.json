@@ -3,7 +3,7 @@
   "description": "Lightweight component which displays HTML string, fixes common typographic issues, adds non-breaking spaces and sanitizes HTML.",
   "author": "Viktor Bezdek <viktor.bezdek@gmail.com>",
   "user": "viktorbezdek",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "scripts": {
     "start": "webpack-dev-server --env dev",
     "test": "jest",
