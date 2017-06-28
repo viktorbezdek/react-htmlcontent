@@ -4,6 +4,8 @@
 
 Lightweight component which displays HTML string, fixes common typographic issues, adds non-breaking spaces and sanitizes HTML.
 
+- [Docs](https://viktorbezdek.github.io/react-htmlcontent)
+
 ## Basic Usage
 
 ```js
