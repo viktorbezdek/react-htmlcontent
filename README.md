@@ -1,4 +1,4 @@
-[![build status](https://secure.travis-ci.org/survivejs/react-component-boilerplate.svg)](http://travis-ci.org/survivejs/react-component-boilerplate) [![bitHound Score](https://www.bithound.io/github/survivejs/react-component-boilerplate/badges/score.svg)](https://www.bithound.io/github/survivejs/react-component-boilerplate) [![Dependency Status](https://david-dm.org/survivejs/react-component-boilerplate.svg)](https://david-dm.org/survivejs/react-component-boilerplate)
+[![build status](https://secure.travis-ci.org/viktorbezdek/react-htmlcontent.svg)](http://travis-ci.org/viktorbezdek/react-htmlcontent) [![bitHound Score](https://www.bithound.io/github/viktorbezdek/react-htmlcontent/badges/score.svg)](https://www.bithound.io/github/viktorbezdek/react-htmlcontent) [![Dependency Status](https://david-dm.org/viktorbezdek/react-htmlcontent.svg)](https://david-dm.org/viktorbezdek/react-htmlcontent)
 
 # react-htmlcontent
 
@@ -6,6 +6,19 @@ Lightweight component which displays HTML string, fixes common typographic issue
 
 ## Basic Usage
 
+```js
+
+import HTMLContent from 'react-htmlcontent'
+
+const myHTMLString = `<p>Hello from HTML containing things that should be sanitized <script>alert('hello')</script> and tweaked 1 000 000 times a day.`
+
+function App() {
+  return (<HTMLContent>{myHTMLString}</HTMLContent>)
+}
+
+```
+
+## Development
 
 ### Common Tasks
 
