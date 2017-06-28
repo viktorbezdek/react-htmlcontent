@@ -67,7 +67,12 @@
     "url-loader": "^0.5.9",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.5.0",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "htmlparser2": "^3.9.2",
+    "prop-types": "^15.5.10",
+    "react-test-renderer": "^15.6.1",
+    "regexp-quote": "^0.0.0",
+    "xtend": "^4.0.1"
   },
   "peerDependencies": {
     "react": ">= 0.11.2 < 16.0.0"
@@ -99,11 +104,5 @@
   "license": "MIT",
   "pre-push": [
     "test"
-  ],
-  "dependencies": {
-    "htmlparser2": "^3.9.2",
-    "prop-types": "^15.5.10",
-    "regexp-quote": "^0.0.0",
-    "xtend": "^4.0.1"
-  }
+  ]
 }
