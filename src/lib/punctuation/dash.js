@@ -40,12 +40,12 @@ export function fixSpacesAroundEmDash (string, locale) {
 }
 
 /*
-	Replace hyphen or dash, placed between 2 cardinal numbers,
-	with an en dash; including cases when there is an extra space
-	from either one side or both sides of the dash
+  Replace hyphen or dash, placed between 2 cardinal numbers,
+  with an en dash; including cases when there is an extra space
+  from either one side or both sides of the dash
 
-	@param {string} string — input text for identification
-	@returns {string} — output with dash between cardinal numbers
+  @param {string} string — input text for identification
+  @returns {string} — output with dash between cardinal numbers
 */
 export function fixDashBetweenCardinalNumbers (string, locale) {
   let pattern = '(' + locale.cardinalNumber + ')([' + locale.spaces + ']?[' + locale.hyphen + locale.enDash + locale.emDash + '][' + locale.spaces + ']?)(' + locale.cardinalNumber + ')'
@@ -55,12 +55,12 @@ export function fixDashBetweenCardinalNumbers (string, locale) {
 }
 
 /*
-	Replace hyphen or dash, placed between 2 ordinal numbers,
-	with an en dash; including cases when there is an extra space
-	from either one side or both sides of the dash
+  Replace hyphen or dash, placed between 2 ordinal numbers,
+  with an en dash; including cases when there is an extra space
+  from either one side or both sides of the dash
 
-	@param {string} string — input text for identification
-	@returns {string} — output with dash between ordinal numbers
+  @param {string} string — input text for identification
+  @returns {string} — output with dash between ordinal numbers
 */
 export function fixDashBetweenOrdinalNumbers (string, locale) {
   let pattern = '(' + locale.cardinalNumber + ')(' + locale.ordinalIndicator + ')([' + locale.spaces + ']?[' + locale.hyphen + locale.enDash + locale.emDash + '][' + locale.spaces + ']?)(' + locale.cardinalNumber + ')(' + locale.ordinalIndicator + ')'
@@ -71,10 +71,10 @@ export function fixDashBetweenOrdinalNumbers (string, locale) {
 }
 
 /*
-	Fixes dashes
+  Fixes dashes
 
-	@param {string} string — input text for identification
-	@returns {string} — output with fixed dashes
+  @param {string} string — input text for identification
+  @returns {string} — output with fixed dashes
 */
 export function fixDash (string, locale) {
   string = replaceThreeHyphensWithEmDash(string, locale)

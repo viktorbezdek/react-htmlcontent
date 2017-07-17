@@ -6,8 +6,8 @@ const quotes = {
 }
 
 const numbers = {
-  ordinalIndicator:	'\\.',
-  romanOrdinalIndicator:	'\\.',
+  ordinalIndicator: '\\.',
+  romanOrdinalIndicator: '\\.',
 }
 
 const abbreviationsForNbsp = [

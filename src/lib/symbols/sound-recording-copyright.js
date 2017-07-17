@@ -1,6 +1,6 @@
 import {addSpaceBeforeSymbol} from '../whitespace/spaces'
 import {addNbspAfterSymbol,
-				replaceSpacesWithNbspAfterSymbol} from '../whitespace/nbsp'
+  replaceSpacesWithNbspAfterSymbol} from '../whitespace/nbsp'
 
 function replaceCwithCopyright (string, locale) {
   let pattern = '(\\(p\\))([' + locale.spaces + ']?)(' + locale.cardinalNumber + ')'

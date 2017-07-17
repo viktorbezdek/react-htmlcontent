@@ -1,8 +1,8 @@
 import {addSpaceBeforeSymbol} from '../whitespace/spaces'
 import {addNbspAfterSymbol,
-				replaceSpacesWithNbspAfterSymbol} from '../whitespace/nbsp'
+  replaceSpacesWithNbspAfterSymbol} from '../whitespace/nbsp'
 import {removeSpaceBeforeTerminalPunctuation,
-				removeSpaceAfterPunctuation} from '../whitespace/spaces'
+  removeSpaceAfterPunctuation} from '../whitespace/spaces'
 
 function replaceRwithRegisteredTrademark (string, locale) {
   let pattern = '([^0-9]|^)([' + locale.spaces + ']*)(\\(r\\)|' + locale.registeredTrademark + ')'

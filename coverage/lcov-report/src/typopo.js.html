@@ -224,15 +224,15 @@ import {fixExponents} from './lib/symbols/exponents'
 import {fixAbbreviations} from './lib/words/abbreviations'
 import {fixCase} from './lib/words/case'
 import {excludeExceptions,
-				placeExceptions} from './lib/words/exceptions'
+        placeExceptions} from './lib/words/exceptions'
 &nbsp;
 /*
-	Correct typos
+  Correct typos
 &nbsp;
-	@param {string} string — input text for correction
-	@param {locale} string — (optional, default: en) supported languages: en, sk, cs, rue.
-	@param {configuration} object — (optional) configuration
-	@returns {string} corrected output
+  @param {string} string — input text for correction
+  @param {locale} string — (optional, default: en) supported languages: en, sk, cs, rue.
+  @param {configuration} object — (optional) configuration
+  @returns {string} corrected output
 */
 export function fixTypos (string, locale, configuration) {
   currentLocale = (typeof locale === 'undefined') ? <span class="branch-0 cbranch-no" title="branch not covered" >'en-us' </span>: locale
@@ -249,20 +249,20 @@ export function fixTypos (string, locale, configuration) {
     string = removeEmptyLines(string)
   }
 &nbsp;
-	// ellipsis (since it can have different spacing around, it has to go before spaces cleanup)
+  // ellipsis (since it can have different spacing around, it has to go before spaces cleanup)
   string = fixEllipsis(string, currentLocale)
 &nbsp;
-	// spaces cleanup
+  // spaces cleanup
   string = fixSpaces(string, currentLocale)
 &nbsp;
-	// punctuation
+  // punctuation
   string = fixPeriod(string)
   string = fixDash(string, currentLocale)
   string = fixHyphen(string, currentLocale)
   string = fixSingleQuotesPrimesAndApostrophes(string, currentLocale)
   string = fixDoubleQuotesAndPrimes(string, currentLocale)
 &nbsp;
-	// symbols
+  // symbols
   string = fixMultiplicationSign(string, currentLocale)
   string = fixSectionSign(string, currentLocale)
   string = fixCopyright(string, currentLocale)
@@ -272,11 +272,11 @@ export function fixTypos (string, locale, configuration) {
   string = fixTrademark(string, currentLocale)
   string = fixExponents(string, currentLocale)
 &nbsp;
-	// words
+  // words
   string = fixCase(string, currentLocale)
   string = fixAbbreviations(string, currentLocale)
 &nbsp;
-	// spaces
+  // spaces
   string = fixNbsp(string, currentLocale)
 &nbsp;
   string = placeExceptions(string)

@@ -52,7 +52,7 @@ export function addNbspWithinOrdinalDate (string, locale) {
 }
 
 export function addNbspAfterRomanNumeral (string, locale) {
-	// we can identify roman numeral effectively only if it has an ordinal indicator
+  // we can identify roman numeral effectively only if it has an ordinal indicator
   if (locale.romanOrdinalIndicator != '') {
     let pattern = '(\\b[' + locale.romanNumerals + ']+)(' + locale.romanOrdinalIndicator + ')([' + locale.spaces + ']?)'
     let re = new RegExp(pattern, 'g')
@@ -91,7 +91,7 @@ export function replaceSpacesWithNbspAfterSymbol (string, locale, symbol) {
 export function addNbspAfterAbbreviation (string, locale) {
   let abbreviations = locale.abbreviationsForNbsp
 
-	// replace existing spaces following abbreviations with nbsp
+  // replace existing spaces following abbreviations with nbsp
 
   for (var abbr in abbreviations) {
     let pattern = '(^|[^' + locale.allChars + locale.sentencePunctuation + '\\n])(' + abbreviations[abbr] + ')([' + locale.spaces + '])([' + locale.allChars + ']|' + locale.cardinalNumber + ')'
@@ -101,7 +101,7 @@ export function addNbspAfterAbbreviation (string, locale) {
     string = string.replace(re, replacement)
   }
 
-	// best effort to add nbsp after abbreviations where were ommited
+  // best effort to add nbsp after abbreviations where were ommited
 
   for (var abbr in abbreviations) {
     let pattern = '(^|[^' + locale.allChars + locale.sentencePunctuation + '\\n])(' + abbreviations[abbr] + '[' + locale.spaces + ']?)([' + locale.allChars + '][^\\.]|' + locale.cardinalNumber + ')'
@@ -115,10 +115,10 @@ export function addNbspAfterAbbreviation (string, locale) {
 }
 
 /*
-	Consolidates the use of non-breaking spaces
+  Consolidates the use of non-breaking spaces
 
-	@param {string} string — input text for identification
-	@returns {string} — output with correctly placed non-breaking space
+  @param {string} string — input text for identification
+  @returns {string} — output with correctly placed non-breaking space
 */
 export function fixNbsp (string, locale) {
   string = removeNbspBetweenMultiCharWords(string, locale)

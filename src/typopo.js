@@ -19,15 +19,15 @@ import {fixExponents} from './lib/symbols/exponents'
 import {fixAbbreviations} from './lib/words/abbreviations'
 import {fixCase} from './lib/words/case'
 import {excludeExceptions,
-				placeExceptions} from './lib/words/exceptions'
+  placeExceptions} from './lib/words/exceptions'
 
 /*
-	Correct typos
+  Correct typos
 
-	@param {string} string — input text for correction
-	@param {locale} string — (optional, default: en) supported languages: en, sk, cs, rue.
-	@param {configuration} object — (optional) configuration
-	@returns {string} corrected output
+  @param {string} string — input text for correction
+  @param {locale} string — (optional, default: en) supported languages: en, sk, cs, rue.
+  @param {configuration} object — (optional) configuration
+  @returns {string} corrected output
 */
 export function fixTypos (string, locale, configuration) {
   currentLocale = (typeof locale === 'undefined') ? 'en-us' : locale
@@ -44,20 +44,20 @@ export function fixTypos (string, locale, configuration) {
     string = removeEmptyLines(string)
   }
 
-	// ellipsis (since it can have different spacing around, it has to go before spaces cleanup)
+  // ellipsis (since it can have different spacing around, it has to go before spaces cleanup)
   string = fixEllipsis(string, currentLocale)
 
-	// spaces cleanup
+  // spaces cleanup
   string = fixSpaces(string, currentLocale)
 
-	// punctuation
+  // punctuation
   string = fixPeriod(string)
   string = fixDash(string, currentLocale)
   string = fixHyphen(string, currentLocale)
   string = fixSingleQuotesPrimesAndApostrophes(string, currentLocale)
   string = fixDoubleQuotesAndPrimes(string, currentLocale)
 
-	// symbols
+  // symbols
   string = fixMultiplicationSign(string, currentLocale)
   string = fixSectionSign(string, currentLocale)
   string = fixCopyright(string, currentLocale)
@@ -67,11 +67,11 @@ export function fixTypos (string, locale, configuration) {
   string = fixTrademark(string, currentLocale)
   string = fixExponents(string, currentLocale)
 
-	// words
+  // words
   string = fixCase(string, currentLocale)
   string = fixAbbreviations(string, currentLocale)
 
-	// spaces
+  // spaces
   string = fixNbsp(string, currentLocale)
 
   string = placeExceptions(string)

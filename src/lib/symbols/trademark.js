@@ -1,5 +1,5 @@
 import {removeSpaceBeforeTerminalPunctuation,
-				removeSpaceAfterPunctuation} from '../whitespace/spaces'
+  removeSpaceAfterPunctuation} from '../whitespace/spaces'
 
 function replaceTMwithTrademark (string, locale) {
   let pattern = '([' + locale.spaces + ']*)(\\(tm\\)|' + locale.trademark + ')'

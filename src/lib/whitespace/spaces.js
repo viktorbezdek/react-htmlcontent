@@ -5,30 +5,30 @@ export function removeMultipleSpaces (string, locale) {
 }
 
 /*
-	Removes extra spaces at the beginning of each paragraph
+  Removes extra spaces at the beginning of each paragraph
 
-	This could be done with a one-liner:
-	return string.replace(/^\s+/gm, "");
+  This could be done with a one-liner:
+  return string.replace(/^\s+/gm, "");
 
-	However, it also removes empty lines. Since, we want to handle this change
-	separately, we need to
-	[1] split the lines manually
-	[2] and remove extra spaces at the begining of each line
-	[3] join lines together to a single string
+  However, it also removes empty lines. Since, we want to handle this change
+  separately, we need to
+  [1] split the lines manually
+  [2] and remove extra spaces at the begining of each line
+  [3] join lines together to a single string
 
-	@param {string} string — input text for identification
-	@returns {string} — output with removed spaces at the beginning of paragraphs
+  @param {string} string — input text for identification
+  @returns {string} — output with removed spaces at the beginning of paragraphs
 */
 export function removeSpacesAtParagraphStart (string, locale) {
-	/* [1] split the lines manually */
+  /* [1] split the lines manually */
   let lines = string.split(/\r?\n/)
 
-	/* [2] and remove extra spaces at the begining of each line */
+  /* [2] and remove extra spaces at the begining of each line */
   for (let i = 0; i < lines.length; i++) {
     lines[i] = lines[i].replace(/^\s+/, '')
   }
 
-	/* [3] join lines together to a single string */
+  /* [3] join lines together to a single string */
   return lines.join('\n')
 }
 
