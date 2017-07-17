@@ -2,16 +2,16 @@
 
 import React from 'react'
 import { string, oneOf } from 'prop-types'
-import {fixTypos} from './typopo'
+import enhanceTypo from './typography'
 
 /**
  * Component for displaying HTML content
  * @param {Object} props
  */
 const HTMLContent = props => {
-  const { children, tagName, ...rest } = props
+  const { children, tagName, locale, ...rest } = props
   const Tag = tagName
-  return <Tag dangerouslySetInnerHTML={{ __html: fixTypos(children, 'cs') }} {...rest} />
+  return <Tag dangerouslySetInnerHTML={{ __html: enhanceTypo(children, locale) }} {...rest} />
 }
 
 HTMLContent.propTypes = {
@@ -35,3 +35,7 @@ HTMLContent.defaultProps = {
 }
 
 export default HTMLContent
+
+export {
+  enhanceTypo,
+}

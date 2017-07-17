@@ -19,7 +19,10 @@ storiesOf('HTMLContent', module)
     <HTMLContent>Ahoj,já jsem obyčejný text -- mimochodem, původně v sobě   mám v sobě typografické chyby.Špatné datum 12.12.2000.</HTMLContent>
   ))
   .add('displays HTML in article tag', () => (
-    <HTMLContent tagName='article'>{`Ahoj, ja jsem <b>HTMLContent</b>.`}</HTMLContent>
+    <HTMLContent tagName='article'>{`<h1>Title</h1> <h2>Subtitle</h2> <img src="http://unsplash.it/100x100" alt="Awesome image"/> Ahoj, ja jsem <b>HTMLContent</b>.`}</HTMLContent>
+  ))
+  .add('Correctly sanitizes HTML', () => (
+    <HTMLContent>{`Ahoj, ja jsem <b>HTMLContent</b> a obsahuju <script>alert('yolo')</script> and <a href="javascript:alert('boom')">JS in href</a>.`}</HTMLContent>
   ))
   .add('fixes typography', () => (
     <div>

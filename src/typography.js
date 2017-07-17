@@ -29,9 +29,7 @@ import {excludeExceptions,
   @param {configuration} object — (optional) configuration
   @returns {string} corrected output
 */
-export function fixTypos (string, locale, configuration) {
-  currentLocale = (typeof locale === 'undefined') ? 'en-us' : locale
-
+export default function (string, locale = 'en-us', configuration) {
   let currentLocale = new Locale(locale)
 
   configuration = (typeof configuration === 'undefined') ? {
@@ -51,11 +49,11 @@ export function fixTypos (string, locale, configuration) {
   string = fixSpaces(string, currentLocale)
 
   // punctuation
-  string = fixPeriod(string)
-  string = fixDash(string, currentLocale)
-  string = fixHyphen(string, currentLocale)
-  string = fixSingleQuotesPrimesAndApostrophes(string, currentLocale)
-  string = fixDoubleQuotesAndPrimes(string, currentLocale)
+  // string = fixPeriod(string)
+  // string = fixDash(string, currentLocale)
+  // string = fixHyphen(string, currentLocale)
+  // string = fixSingleQuotesPrimesAndApostrophes(string, currentLocale)
+  // string = fixDoubleQuotesAndPrimes(string, currentLocale)
 
   // symbols
   string = fixMultiplicationSign(string, currentLocale)
