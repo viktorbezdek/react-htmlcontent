@@ -9,9 +9,9 @@ import {fixTypos} from './typopo'
  * @param {Object} props
  */
 const HTMLContent = props => {
-  const { children, tagName } = props
+  const { children, tagName, ...rest } = props
   const Tag = tagName
-  return <Tag dangerouslySetInnerHTML={{ __html: fixTypos(children, 'cs') }} />
+  return <Tag dangerouslySetInnerHTML={{ __html: fixTypos(children, 'cs') }} {...rest} />
 }
 
 HTMLContent.propTypes = {
