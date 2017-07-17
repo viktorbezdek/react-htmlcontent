@@ -1,23 +1,37 @@
-import React from 'react'
-import { string } from 'prop-types'
-import rules from './lib/rules'
+// @flow
 
-const HTMLContent = (props) => {
+import React from 'react'
+import { string, oneOf } from 'prop-types'
+import {fixTypos} from './typopo'
+
+/**
+ * Component for displaying HTML content
+ * @param {Object} props
+ */
+const HTMLContent = props => {
   const { children, tagName } = props
   const Tag = tagName
-  const sanitized = rules.reduce((r, f) => f(r), children)
-  return (
-    <Tag dangerouslySetInnerHTML={{ __html: sanitized }} />
-  )
+  return <Tag dangerouslySetInnerHTML={{ __html: fixTypos(children, 'cs') }} />
+}
+
+HTMLContent.propTypes = {
+  /**
+   * HTML string to display
+   */
+  children: string.isRequired,
+  /**
+   * Tag name or react component (supporting dangerouslySetInnerHTML) to wrap HTML
+   */
+  tagName: string,
+  /**
+   * Locale of HTML text
+   */
+  locale: oneOf(['cs', 'sk', 'en-us', 'rue']),
 }
 
 HTMLContent.defaultProps = {
   tagName: 'div',
-}
-
-HTMLContent.propTypes = {
-  children: string.isRequired,
-  tagName: string.isRequired,
+  locale: 'cs',
 }
 
 export default HTMLContent

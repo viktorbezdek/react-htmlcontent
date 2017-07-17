@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/locale/locale.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/locale</a> locale.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>55/55</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>55/55</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">704x</span>
+<span class="cline-any cline-yes">2816x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2816x</span>
+<span class="cline-any cline-yes">22528x</span>
+<span class="cline-any cline-yes">22528x</span>
+<span class="cline-any cline-yes">22528x</span>
+<span class="cline-any cline-yes">22528x</span>
+<span class="cline-any cline-yes">22528x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// import loc from "../locale/locale";
+&nbsp;
+import localeCs from './cs'
+import localeEnUs from './en-us'
+import localeRue from './rue'
+import localeSk from './sk'
+&nbsp;
+const typopoLocale = {
+  'cs': localeCs,
+  'en-us': localeEnUs,
+  'rue': localeRue,
+  'sk': localeSk,
+}
+&nbsp;
+export default class Locale {
+  constructor (locale) {
+    this.locale = locale
+&nbsp;
+		/* Letters */
+    this.nonLatinLowercase = 'áäčďéěíĺľňóôöőŕřšťúüűůýžабвгґдезіийклмнопрстуфъыьцчжшїщёєюях'
+    this.nonLatinUppercase = 'ÁÄČĎÉĚÍĹĽŇÓÔÖŐŔŘŠŤÚÜŰŮÝŽАБВГҐДЕЗІИЙКЛМНОПРСТУФЪЫЬЦЧЖШЇЩЁЄЮЯХ'
+    this.nonLatinChars = this.nonLatinLowercase + this.nonLatinUppercase
+    this.lowercaseChars = 'a-z' + this.nonLatinLowercase
+    this.uppercaseChars = 'A-Z' + this.nonLatinUppercase
+    this.allChars = this.lowercaseChars + this.uppercaseChars
+&nbsp;
+		/* Quotes, primes, apostrophes */
+		/*
+			(39)			dumb single quote
+			(8216)		left single quotation mark
+			(8217)		right single quotation mark
+			(700)		modifier letter apostrophe; https://en.wikipedia.org/wiki/Modifier_letter_apostrophe
+			(8219)		single high-reversed-9 quotation mark
+			(8242)		prime
+			(8249)		single left-pointing angle quotation mark
+			(8250)		single right-pointing angle quotation mark
+		 */
+    this.singleQuoteAdepts = "‚|'|‘|’|ʼ|‛|′|‹|›"
+    this.leftSingleQuote = typopoLocale[locale].quotes.leftSingleQuote
+    this.rightSingleQuote = typopoLocale[locale].quotes.rightSingleQuote
+    this.apostrophe = '’'
+    this.singlePrime = '′'
+    this.doubleQuoteAdepts = "„|“|”|\"|«|»|″|,{2,}|‘{2,}|’{2,}|'{2,}|‹{2,}|›{2,}|′{2,}"
+    this.leftDoubleQuote = typopoLocale[locale].quotes.leftDoubleQuote
+    this.rightDoubleQuote = typopoLocale[locale].quotes.rightDoubleQuote
+    this.doublePrime = '″'
+&nbsp;
+		/* Spaces */
+    this.space = ' '
+    this.nbsp = ' '
+    this.hairSpace = ' ' // &amp;#8202;
+    this.narrowNbsp = ' ' // &amp;#8239;
+    this.spaces = this.space + this.nbsp + this.hairSpace + this.narrowNbsp
+&nbsp;
+		/* Punctuation */
+    this.terminalPunctuation = '\.\!\?'
+    this.sentencePausePunctuation = '\,\:\;',
+		this.sentencePunctuation = this.sentencePausePunctuation + this.terminalPunctuation // there is no ellipsis in the set as it is being used throughout a sentence in the middle. Rethink this group to split it into end-sentence punctuation and middle sentence punctuation
+    this.openingBrackets = '\\(\\[\\{'
+    this.closingBrackets = '\\)\\]\\}'
+    this.ellipsis = '…'
+    this.hyphen = '-'
+    this.enDash = '–'
+    this.emDash = '—'
+    this.slash = '/'
+&nbsp;
+		/* Symbols */
+    this.degree = '°'
+    this.multiplicationSign = '×'
+    this.ampersand = '&amp;'
+    this.sectionSign = '§'
+    this.copyright = '©'
+    this.registeredTrademark = '®'
+    this.soundRecordingCopyright = '℗'
+    this.trademark = '™'
+    this.plusMinus = '±'
+&nbsp;
+		/*
+			Source for webUrlPattern, emailAddressPattern
+			http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/2.0_r1/android/text/util/Regex.java#Regex.0WEB_URL_PATTERN
+		*/
+    this.webUrlPattern = "((?:(http|https|Http|Https|rtsp|Rtsp):\\/\\/(?:(?:[a-zA-Z0-9\\$\\-\\_\\.\\+\\!\\*\\'\\(\\)" +
+			'\\,\\;\\?\\&amp;\\=]|(?:\\%[a-fA-F0-9]{2})){1,64}(?:\\:(?:[a-zA-Z0-9\\$\\-\\_' +
+			"\\.\\+\\!\\*\\'\\(\\)\\,\\;\\?\\&amp;\\=]|(?:\\%[a-fA-F0-9]{2})){1,25})?\\@)?)?" +
+			'((?:(?:[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}\\.)+' +  // named host
+			'(?:' + // plus top level domain
+			'(?:aero|arpa|asia|a[cdefgilmnoqrstuwxz])' +
+			'|(?:biz|b[abdefghijmnorstvwyz])' +
+			'|(?:cat|com|coop|c[acdfghiklmnoruvxyz])' +
+			'|d[ejkmoz]' +
+			'|(?:edu|e[cegrstu])' +
+			'|f[ijkmor]' +
+			'|(?:gov|g[abdefghilmnpqrstuwy])' +
+			'|h[kmnrtu]' +
+			'|(?:info|int|i[delmnoqrst])' +
+			'|(?:jobs|j[emop])' +
+			'|k[eghimnrwyz]' +
+			'|l[abcikrstuvy]' +
+			'|(?:mil|mobi|museum|m[acdghklmnopqrstuvwxyz])' +
+			'|(?:name|net|n[acefgilopruz])' +
+			'|(?:org|om)' +
+			'|(?:pro|p[aefghklmnrstwy])' +
+			'|qa' +
+			'|r[eouw]' +
+			'|s[abcdeghijklmnortuvyz]' +
+			'|(?:tel|travel|t[cdfghjklmnoprtvwz])' +
+			'|u[agkmsyz]' +
+			'|v[aceginu]' +
+			'|w[fs]' +
+			'|y[etu]' +
+			'|z[amw]))' +
+			'|(?:(?:25[0-5]|2[0-4]' + // or ip address
+			'[0-9]|[0-1][0-9]{2}|[1-9][0-9]|[1-9])\\.(?:25[0-5]|2[0-4][0-9]' +
+			'|[0-1][0-9]{2}|[1-9][0-9]|[1-9]|0)\\.(?:25[0-5]|2[0-4][0-9]|[0-1]' +
+			'[0-9]{2}|[1-9][0-9]|[1-9]|0)\\.(?:25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}' +
+			'|[1-9][0-9]|[0-9])))' +
+			'(?:\\:\\d{1,5})?)' + // plus option port number +
+			'(\\/(?:(?:[a-zA-Z0-9\\;\\/\\?\\:\\@\\&amp;\\=\\#\\~' + // plus option query params
+			"\\-\\.\\+\\!\\*\\'\\(\\)\\,\\_])|(?:\\%[a-fA-F0-9]{2}))*)?" +
+			'(?:\\b|$)' // and finally, a word boundary or end of
+		// input.  This is to stop foo.sure from
+		// matching as foo.su
+&nbsp;
+		/* Email pattern */
+    this.emailAddressPattern = '[a-zA-Z0-9\\+\\.\\_\\%\\-]{1,256}' +
+			'\\@' +
+			'[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}' +
+			'(' +
+			'\\.' +
+			'[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}' +
+			')+'
+&nbsp;
+		/* Numbers */
+    this.cardinalNumber = '\\d+'
+    this.ordinalIndicator = typopoLocale[locale].numbers.ordinalIndicator
+    this.romanNumerals = 'IVXLCDM'
+    this.romanOrdinalIndicator = typopoLocale[locale].numbers.romanOrdinalIndicator
+&nbsp;
+		/* Abbreviations */
+    this.abbreviationsForNbsp = {}
+&nbsp;
+		// Create one key-value map of all abbreviations in all languages that need nbsp
+    for (locale in typopoLocale) {
+      let localeAbbrForNbsp = typopoLocale[locale].abbreviationsForNbsp
+&nbsp;
+      for (let i = 0; i &lt; localeAbbrForNbsp.length; i++) {
+        let pattern = '\\.'
+        let re = new RegExp(pattern, 'g')
+        let replacement = '\\.'
+        let localeAbbrForNbspPattern = localeAbbrForNbsp[i].replace(re, replacement)
+        this.abbreviationsForNbsp[localeAbbrForNbsp[i]] = localeAbbrForNbspPattern
+      }
+    }
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jul 17 2017 13:31:58 GMT+0200 (CEST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

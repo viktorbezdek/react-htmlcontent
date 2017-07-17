@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/lib/whitespace/nbsp.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/lib/whitespace</a> nbsp.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>67/67</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>12/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>67/67</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">117x</span>
+<span class="cline-any cline-yes">117x</span>
+<span class="cline-any cline-yes">117x</span>
+<span class="cline-any cline-yes">117x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">117x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">122x</span>
+<span class="cline-any cline-yes">122x</span>
+<span class="cline-any cline-yes">122x</span>
+<span class="cline-any cline-yes">122x</span>
+<span class="cline-any cline-yes">122x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">122x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">113x</span>
+<span class="cline-any cline-yes">113x</span>
+<span class="cline-any cline-yes">113x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">113x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">114x</span>
+<span class="cline-any cline-yes">114x</span>
+<span class="cline-any cline-yes">114x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">114x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">136x</span>
+<span class="cline-any cline-yes">136x</span>
+<span class="cline-any cline-yes">136x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">136x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">121x</span>
+<span class="cline-any cline-yes">121x</span>
+<span class="cline-any cline-yes">121x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">121x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">136x</span>
+<span class="cline-any cline-yes">75x</span>
+<span class="cline-any cline-yes">75x</span>
+<span class="cline-any cline-yes">75x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">75x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">114x</span>
+<span class="cline-any cline-yes">114x</span>
+<span class="cline-any cline-yes">114x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">114x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91x</span>
+<span class="cline-any cline-yes">91x</span>
+<span class="cline-any cline-yes">91x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">92x</span>
+<span class="cline-any cline-yes">92x</span>
+<span class="cline-any cline-yes">92x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">92x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">129x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">129x</span>
+<span class="cline-any cline-yes">2451x</span>
+<span class="cline-any cline-yes">2451x</span>
+<span class="cline-any cline-yes">2451x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2451x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">129x</span>
+<span class="cline-any cline-yes">2451x</span>
+<span class="cline-any cline-yes">2451x</span>
+<span class="cline-any cline-yes">2451x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2451x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">129x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">112x</span>
+<span class="cline-any cline-yes">112x</span>
+<span class="cline-any cline-yes">112x</span>
+<span class="cline-any cline-yes">112x</span>
+<span class="cline-any cline-yes">112x</span>
+<span class="cline-any cline-yes">112x</span>
+<span class="cline-any cline-yes">112x</span>
+<span class="cline-any cline-yes">112x</span>
+<span class="cline-any cline-yes">112x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">112x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {removeTrailingSpaces} from '../whitespace/spaces'
+&nbsp;
+export function removeNbspBetweenMultiCharWords (string, locale) {
+  let pattern = '([' + locale.lowercaseChars + locale.uppercaseChars + ']{2,})([' + locale.nbsp + locale.narrowNbsp + '])([' + locale.lowercaseChars + locale.uppercaseChars + ']{2,})'
+  let re = new RegExp(pattern, 'g')
+  string = string.replace(re, '$1 $3')
+  string = string.replace(re, '$1 $3') // calling it twice to catch odd/even occurences
+&nbsp;
+  return string
+}
+&nbsp;
+export function addNbspAfterPreposition (string, locale) {
+  let pattern = '(^|[' + locale.space + ']|[^' + locale.allChars + locale.apostrophe + '])([' + locale.allChars + '])([' + locale.space + '])'
+  let re = new RegExp(pattern, 'g')
+  let replacement = '$1$2' + locale.nbsp
+  string = string.replace(re, replacement)
+  string = string.replace(re, replacement) // calling it twice to catch odd/even occurences
+&nbsp;
+  return string
+}
+&nbsp;
+export function addNbspAfterAmpersand (string, locale) {
+  let pattern = '([' + locale.spaces + '])(' + locale.ampersand + ')([' + locale.spaces + '])'
+  let re = new RegExp(pattern, 'g')
+  let replacement = ' $2' + locale.nbsp
+&nbsp;
+  return string.replace(re, replacement)
+}
+&nbsp;
+export function addNbspAfterCardinalNumber (string, locale) {
+  let pattern = '(' + locale.cardinalNumber + ')( )([' + locale.allChars + ']+)'
+  let re = new RegExp(pattern, 'g')
+  let replacement = '$1' + locale.nbsp + '$3'
+&nbsp;
+  return string.replace(re, replacement)
+}
+&nbsp;
+export function addNbspAfterOrdinalNumber (string, locale) {
+  let pattern = '(' + locale.cardinalNumber + ')(' + locale.ordinalIndicator + ')([' + locale.spaces + ']?)([' + locale.allChars + ']+)'
+  let re = new RegExp(pattern, 'g')
+  let replacement = '$1$2' + locale.nbsp + '$4'
+&nbsp;
+  return string.replace(re, replacement)
+}
+&nbsp;
+export function addNbspWithinOrdinalDate (string, locale) {
+  let pattern = '(' + locale.cardinalNumber + ')(' + locale.ordinalIndicator + ')([' + locale.spaces + ']?)(' + locale.cardinalNumber + ')(' + locale.ordinalIndicator + ')([' + locale.spaces + ']?)(' + locale.cardinalNumber + ')'
+  let re = new RegExp(pattern, 'g')
+  let replacement = '$1$2' + locale.nbsp + '$4$5' + locale.nbsp + '$7'
+&nbsp;
+  return string.replace(re, replacement)
+}
+&nbsp;
+export function addNbspAfterRomanNumeral (string, locale) {
+	// we can identify roman numeral effectively only if it has an ordinal indicator
+  if (locale.romanOrdinalIndicator != '') {
+    let pattern = '(\\b[' + locale.romanNumerals + ']+)(' + locale.romanOrdinalIndicator + ')([' + locale.spaces + ']?)'
+    let re = new RegExp(pattern, 'g')
+    let replacement = '$1$2' + locale.nbsp
+&nbsp;
+    return string.replace(re, replacement)
+  }
+&nbsp;
+  return string
+}
+&nbsp;
+export function addNbspAfterInitial (string, locale) {
+  let pattern = '([' + locale.uppercaseChars + ']\\.)([' + locale.spaces + '])'
+  let re = new RegExp(pattern, 'g')
+  let replacement = '$1' + locale.nbsp
+&nbsp;
+  return string.replace(re, replacement)
+}
+&nbsp;
+export function addNbspAfterSymbol (string, locale, symbol) {
+  let pattern = '(' + symbol + ')([^' + locale.spaces + '])'
+  let re = new RegExp(pattern, 'g')
+  let replacement = '$1' + locale.nbsp + '$2'
+&nbsp;
+  return string.replace(re, replacement)
+}
+&nbsp;
+export function replaceSpacesWithNbspAfterSymbol (string, locale, symbol) {
+  let pattern = '(' + symbol + ')([' + locale.spaces + '])'
+  let re = new RegExp(pattern, 'g')
+  let replacement = '$1' + locale.nbsp
+&nbsp;
+  return string.replace(re, replacement)
+}
+&nbsp;
+export function addNbspAfterAbbreviation (string, locale) {
+  let abbreviations = locale.abbreviationsForNbsp
+&nbsp;
+	// replace existing spaces following abbreviations with nbsp
+&nbsp;
+  for (var abbr in abbreviations) {
+    let pattern = '(^|[^' + locale.allChars + locale.sentencePunctuation + '\\n])(' + abbreviations[abbr] + ')([' + locale.spaces + '])([' + locale.allChars + ']|' + locale.cardinalNumber + ')'
+    let re = new RegExp(pattern, 'gi')
+    let replacement = '$1' + abbr + locale.nbsp + '$4'
+&nbsp;
+    string = string.replace(re, replacement)
+  }
+&nbsp;
+	// best effort to add nbsp after abbreviations where were ommited
+&nbsp;
+  for (var abbr in abbreviations) {
+    let pattern = '(^|[^' + locale.allChars + locale.sentencePunctuation + '\\n])(' + abbreviations[abbr] + '[' + locale.spaces + ']?)([' + locale.allChars + '][^\\.]|' + locale.cardinalNumber + ')'
+    let re = new RegExp(pattern, 'gi')
+    let replacement = '$1' + abbr + locale.nbsp + '$3'
+&nbsp;
+    string = string.replace(re, replacement)
+  }
+&nbsp;
+  return removeTrailingSpaces(string, locale)
+}
+&nbsp;
+/*
+	Consolidates the use of non-breaking spaces
+&nbsp;
+	@param {string} string — input text for identification
+	@returns {string} — output with correctly placed non-breaking space
+*/
+export function fixNbsp (string, locale) {
+  string = removeNbspBetweenMultiCharWords(string, locale)
+  string = addNbspAfterPreposition(string, locale)
+  string = addNbspAfterAmpersand(string, locale)
+  string = addNbspAfterCardinalNumber(string, locale)
+  string = addNbspAfterOrdinalNumber(string, locale)
+  string = addNbspWithinOrdinalDate(string, locale)
+  string = addNbspAfterRomanNumeral(string, locale)
+  string = addNbspAfterInitial(string, locale)
+  string = addNbspAfterAbbreviation(string, locale)
+&nbsp;
+  return string
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jul 17 2017 13:31:58 GMT+0200 (CEST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

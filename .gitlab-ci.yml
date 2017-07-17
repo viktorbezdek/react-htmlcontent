@@ -1,0 +1,65 @@
+image: node:6
+
+# Build - Build necessary JS files
+# Test - Run tests
+# Deploy - Deploy application to static web/docker images/npm registry
+stages:
+  - build
+  - test
+  - publish
+
+# Configuration
+variables:
+  BRANCH: frack/react-htmlcontent:$CI_BUILD_TAG
+
+cache:
+  paths:
+    - node_modules/
+    - dist/
+  key: ${CI_BUILD_REF_NAME}
+  untracked: true
+
+# Job: Build
+# Build dist
+build:
+  stage: build
+  before_script:
+    - echo "building branch:$CI_BUILD_REF_NAME tag:$CI_BUILD_TAG"
+  script:
+    - npm install
+    - NODE_ENV=production npm run build
+  artifacts:
+    paths:
+      - dist/
+
+# Job: Bump
+# Bump version
+bump:
+  stage: build
+  script:
+    - git checkout master
+    - npm version patch -m "Bump version to %s by CI"
+    - git push
+  only:
+    - master
+
+# Job: Test
+# Run tests against our application
+# If this fails, we do not deploy
+test:
+  stage: test
+  script:
+    - npm run lint
+    - npm run test
+  only:
+    - branches
+    - tags
+
+# Job: npm bpulish
+publish:
+  stage: publish
+  script:
+    - npm publish
+  only:
+    - tags
+    - master

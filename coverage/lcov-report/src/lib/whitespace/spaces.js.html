@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/lib/whitespace/spaces.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/lib/whitespace</a> spaces.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>36/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>10/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>36/36</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-yes">47x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">171x</span>
+<span class="cline-any cline-yes">171x</span>
+<span class="cline-any cline-yes">171x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">163x</span>
+<span class="cline-any cline-yes">163x</span>
+<span class="cline-any cline-yes">163x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">47x</span>
+<span class="cline-any cline-yes">47x</span>
+<span class="cline-any cline-yes">47x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">269x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">92x</span>
+<span class="cline-any cline-yes">92x</span>
+<span class="cline-any cline-yes">92x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">92x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export function removeMultipleSpaces (string, locale) {
+  let pattern = '[' + locale.spaces + ']{2,}'
+  let re = new RegExp(pattern, 'g')
+  return string.replace(re, ' ')
+}
+&nbsp;
+/*
+	Removes extra spaces at the beginning of each paragraph
+&nbsp;
+	This could be done with a one-liner:
+	return string.replace(/^\s+/gm, "");
+&nbsp;
+	However, it also removes empty lines. Since, we want to handle this change
+	separately, we need to
+	[1] split the lines manually
+	[2] and remove extra spaces at the begining of each line
+	[3] join lines together to a single string
+&nbsp;
+	@param {string} string — input text for identification
+	@returns {string} — output with removed spaces at the beginning of paragraphs
+*/
+export function removeSpacesAtParagraphStart (string, locale) {
+	/* [1] split the lines manually */
+  let lines = string.split(/\r?\n/)
+&nbsp;
+	/* [2] and remove extra spaces at the begining of each line */
+  for (let i = 0; i &lt; lines.length; i++) {
+    lines[i] = lines[i].replace(/^\s+/, '')
+  }
+&nbsp;
+	/* [3] join lines together to a single string */
+  return lines.join('\n')
+}
+&nbsp;
+export function removeSpaceBeforeSentencePausePunctuation (string, locale) {
+  let pattern = '([' + locale.spaces + '])([' + locale.sentencePausePunctuation + '])([^\\-\\)]|$)'
+  let re = new RegExp(pattern, 'g')
+  return string.replace(re, '$2$3')
+}
+&nbsp;
+export function removeSpaceBeforeTerminalPunctuation (string, locale) {
+  let pattern = '([' + locale.spaces + '])([' + locale.terminalPunctuation + locale.closingBrackets + locale.degree + '])'
+  let re = new RegExp(pattern, 'g')
+  return string.replace(re, '$2')
+}
+&nbsp;
+export function removeSpaceAfterPunctuation (string, locale) {
+  let pattern = '([' + locale.openingBrackets + '])([' + locale.spaces + '])'
+  let re = new RegExp(pattern, 'g')
+  return string.replace(re, '$1')
+}
+&nbsp;
+export function addSpaceBeforePunctuation (string, locale) {
+  var pattern = '([' + locale.lowercaseChars + locale.uppercaseChars + '])([' + locale.openingBrackets + '])([' + locale.lowercaseChars + locale.uppercaseChars + '])'
+  var re = new RegExp(pattern, 'g')
+  return string.replace(re, '$1 $2$3')
+}
+&nbsp;
+export function addSpaceAfterPunctuation (string, locale) {
+  var pattern = '([' + locale.lowercaseChars + locale.uppercaseChars + ']{2,})([' + locale.sentencePunctuation + locale.closingBrackets + '])([' + locale.lowercaseChars + locale.uppercaseChars + '])'
+  var re = new RegExp(pattern, 'g')
+  return string.replace(re, '$1$2 $3')
+}
+&nbsp;
+export function removeTrailingSpaces (string, locale) {
+  return string.trim()
+}
+&nbsp;
+export function addSpaceBeforeSymbol (string, locale, symbol) {
+  let pattern = '([^' + locale.spaces + locale.openingBrackets + '])(' + symbol + ')'
+  let re = new RegExp(pattern, 'g')
+  let replacement = '$1' + locale.space + '$2'
+&nbsp;
+  return string.replace(re, replacement)
+}
+&nbsp;
+export function fixSpaces (string, locale) {
+  string = removeMultipleSpaces(string, locale)
+  string = removeSpacesAtParagraphStart(string, locale)
+  string = removeSpaceBeforeSentencePausePunctuation(string, locale)
+  string = removeSpaceBeforeTerminalPunctuation(string, locale)
+  string = removeSpaceAfterPunctuation(string, locale)
+  string = addSpaceBeforePunctuation(string, locale)
+  string = addSpaceAfterPunctuation(string, locale)
+  string = removeTrailingSpaces(string, locale)
+  return string
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jul 17 2017 13:31:58 GMT+0200 (CEST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>
