@@ -18,8 +18,7 @@ import {fixTrademark} from './lib/symbols/trademark'
 import {fixExponents} from './lib/symbols/exponents'
 import {fixAbbreviations} from './lib/words/abbreviations'
 import {fixCase} from './lib/words/case'
-import {excludeExceptions,
-  placeExceptions} from './lib/words/exceptions'
+import {excludeExceptions, placeExceptions} from './lib/words/exceptions'
 
 /*
   Correct typos
@@ -33,7 +32,7 @@ export default function (string, locale = 'en-us', configuration) {
   let currentLocale = new Locale(locale)
 
   configuration = (typeof configuration === 'undefined') ? {
-    removeLines: true,
+    removeLines: false,
   } : configuration
 
   string = excludeExceptions(string, currentLocale)
@@ -49,11 +48,11 @@ export default function (string, locale = 'en-us', configuration) {
   string = fixSpaces(string, currentLocale)
 
   // punctuation
-  // string = fixPeriod(string)
-  // string = fixDash(string, currentLocale)
-  // string = fixHyphen(string, currentLocale)
-  // string = fixSingleQuotesPrimesAndApostrophes(string, currentLocale)
-  // string = fixDoubleQuotesAndPrimes(string, currentLocale)
+  string = fixPeriod(string)
+  string = fixDash(string, currentLocale)
+  string = fixHyphen(string, currentLocale)
+  string = fixSingleQuotesPrimesAndApostrophes(string, currentLocale)
+  string = fixDoubleQuotesAndPrimes(string, currentLocale)
 
   // symbols
   string = fixMultiplicationSign(string, currentLocale)
