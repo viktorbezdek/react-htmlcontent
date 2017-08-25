@@ -1,5 +1,5 @@
 import {fixTrademark} from '../../src/lib/symbols/trademark'
-import {fixTypos} from '../../src/typopo'
+import {fixTypos} from '../../src/typography'
 import assert from 'assert'
 import Locale from '../../src/locale/locale'
 

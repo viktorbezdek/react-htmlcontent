@@ -3,15 +3,21 @@
 import React from 'react'
 import { string, oneOf } from 'prop-types'
 import enhanceTypo from './typography'
+import compose from 'compose'
 
-const replace = data => data.replace(/([^<]*)(\s?<[A-z]+[^>]*>)([\s\S]*?)\s?(<\/[A-z]+>\s?)([^<]*)/g,
+const enhanceTypoInHTML = data => data.replace(/([^<]*)(\s?<[A-z]+[^>]*>)([\s\S]*?)\s?(<\/[A-z]+>\s?)([^<]*)/g,
   function (_, beforeTag: string, startTag: string, body: string, endTag: string, afterTag: string) {
     if (/(<[A-z]+[^>]*>)(.*?)(<\/[A-z]+>)/g.test(body)) {
-      return replace(body)
+      return enhanceTypoInHTML(body)
     } else {
       return enhanceTypo(beforeTag) + (beforeTag.lastIndexOf(' ') === beforeTag.length - 1 ? ' ' : '') + startTag + enhanceTypo(body, 'cs') + endTag + enhanceTypo(afterTag)
     }
   })
+
+const removeNbsp = text => text.replace('&nbsp;', ' ')
+
+const finalEnhanceTypo = compose(enhanceTypoInHTML, removeNbsp)
+
 /**
  * Component for displaying HTML content
  * @param {Object} props
@@ -19,7 +25,8 @@ const replace = data => data.replace(/([^<]*)(\s?<[A-z]+[^>]*>)([\s\S]*?)\s?(<\/
 const HTMLContent = props => {
   const { children, tagName, locale, ...rest } = props
   const Tag = tagName
-  return <Tag dangerouslySetInnerHTML={{ __html: replace(children) }} {...rest} />
+  return <Tag dangerouslySetInnerHTML={{ __html: finalEnhanceTypo
+(children) }} {...rest} />
 }
 
 HTMLContent.propTypes = {
@@ -45,5 +52,5 @@ HTMLContent.defaultProps = {
 export default HTMLContent
 
 export {
-  enhanceTypo,
+  enhanceTypo: finalEnhanceTypo,
 }
