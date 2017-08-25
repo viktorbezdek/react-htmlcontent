@@ -2,21 +2,30 @@
 
 import React from 'react'
 import { string, oneOf } from 'prop-types'
-import enhanceTypo from './typography'
-import compose from 'compose'
+import enhanceTypoBase from './typography'
 
-const enhanceTypoInHTML = data => data.replace(/([^<]*)(\s?<[A-z]+[^>]*>)([\s\S]*?)\s?(<\/[A-z]+>\s?)([^<]*)/g,
-  function (_, beforeTag: string, startTag: string, body: string, endTag: string, afterTag: string) {
+const enhanceTypoInHTML = (data, locale = 'cs', config) =>
+  data.replace(/([^<]*)(\s?<[A-z]+[^>]*>)([\s\S]*?)\s?(<\/[A-z]+>\s?)([^<]*)/gi, function (
+    _,
+    beforeTag: string,
+    startTag: string,
+    body: string,
+    endTag: string,
+    afterTag: string
+  ) {
     if (/(<[A-z]+[^>]*>)(.*?)(<\/[A-z]+>)/g.test(body)) {
       return enhanceTypoInHTML(body)
     } else {
-      return enhanceTypo(beforeTag) + (beforeTag.lastIndexOf(' ') === beforeTag.length - 1 ? ' ' : '') + startTag + enhanceTypo(body, 'cs') + endTag + enhanceTypo(afterTag)
+      return (
+        enhanceTypoBase(beforeTag, locale, config) +
+        (beforeTag.lastIndexOf(' ') === beforeTag.length - 1 ? ' ' : '') +
+        startTag +
+        enhanceTypoBase(body, locale, config) +
+        endTag +
+        enhanceTypoBase(afterTag, locale, config)
+      )
     }
   })
-
-const removeNbsp = text => text.replace('&nbsp;', ' ')
-
-const finalEnhanceTypo = compose(enhanceTypoInHTML, removeNbsp)
 
 /**
  * Component for displaying HTML content
@@ -25,8 +34,14 @@ const finalEnhanceTypo = compose(enhanceTypoInHTML, removeNbsp)
 const HTMLContent = props => {
   const { children, tagName, locale, ...rest } = props
   const Tag = tagName
-  return <Tag dangerouslySetInnerHTML={{ __html: finalEnhanceTypo
-(children) }} {...rest} />
+  return (
+    <Tag
+      dangerouslySetInnerHTML={{
+        __html: finalEnhanceTypo(children),
+      }}
+      {...rest}
+    />
+  )
 }
 
 HTMLContent.propTypes = {
@@ -51,6 +66,4 @@ HTMLContent.defaultProps = {
 
 export default HTMLContent
 
-export {
-  enhanceTypo: finalEnhanceTypo,
-}
+export { enhanceTypo }

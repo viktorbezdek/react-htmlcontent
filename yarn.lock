@@ -1731,12 +1731,6 @@ commondir@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
 
-compose@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/compose/-/compose-0.1.2.tgz#d556f55d0a91399df4227945c1bd96030310fe7c"
-  dependencies:
-    patr "0.2.5"
-
 concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
@@ -4654,12 +4648,6 @@ path-type@^2.0.0:
   dependencies:
     pify "^2.0.0"
 
-patr@0.2.5:
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/patr/-/patr-0.2.5.tgz#4231e87f0dac5b766b0475cd4ac94bd9c3563de7"
-  dependencies:
-    promised-io "0.2.3"
-
 pbkdf2@^3.0.3:
   version "3.0.12"
   resolved "https://registry.yarnpkg.com/pbkdf2/-/pbkdf2-3.0.12.tgz#be36785c5067ea48d806ff923288c5f750b6b8a2"
@@ -5039,10 +5027,6 @@ promise@^7.1.1:
   resolved "https://registry.yarnpkg.com/promise/-/promise-7.3.1.tgz#064b72602b18f90f29192b8b1bc418ffd1ebd3bf"
   dependencies:
     asap "~2.0.3"
-
-promised-io@0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/promised-io/-/promised-io-0.2.3.tgz#65b9219cc60c1dda64d3e60f86335368c2e56c96"
 
 prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.5.9:
   version "15.5.10"
