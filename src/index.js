@@ -4,7 +4,7 @@ import React from 'react'
 import { string, oneOf } from 'prop-types'
 import enhanceTypoBase from './typography'
 
-const enhanceTypoInHTML = (data, locale = 'cs', config) =>
+const enhanceTypo = (data, locale = 'cs', config) =>
   data.replace(/([^<]*)(\s?<[A-z]+[^>]*>)([\s\S]*?)\s?(<\/[A-z]+>\s?)([^<]*)/gi, function (
     _,
     beforeTag: string,
