@@ -48,6 +48,7 @@ export default class Locale {
     /* Spaces */
     this.space = ' '
     this.nbsp = ' '
+    this.nbspEntity = '&nbsp;'
     this.hairSpace = ' ' // &#8202;
     this.narrowNbsp = ' ' // &#8239;
     this.spaces = this.space + this.nbsp + this.hairSpace + this.narrowNbsp

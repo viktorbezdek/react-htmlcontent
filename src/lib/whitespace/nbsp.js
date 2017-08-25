@@ -1,7 +1,6 @@
 import {removeTrailingSpaces} from '../whitespace/spaces'
 
 export function removeNbspBetweenMultiCharWords (string, locale) {
-  string = string.replace(/&nbsp;/gim, ' ')
   let pattern = '([' + locale.lowercaseChars + locale.uppercaseChars + ']{2,})([' + locale.nbsp + locale.narrowNbsp + '])([' + locale.lowercaseChars + locale.uppercaseChars + ']{2,})'
   let re = new RegExp(pattern, 'g')
   string = string.replace(re, '$1 $3')
@@ -11,10 +10,9 @@ export function removeNbspBetweenMultiCharWords (string, locale) {
 }
 
 export function addNbspAfterPreposition (string, locale) {
-  string = string.replace(/&nbsp;/igm, ' ')
   let pattern = '(^|[' + locale.space + ']|[^' + locale.allChars + locale.apostrophe + '])([' + locale.allChars + '])([' + locale.space + '])'
   let re = new RegExp(pattern, 'g')
-  let replacement = '$1$2' + locale.nbsp
+  let replacement = '$1$2' + locale.nbspEntity
   string = string.replace(re, replacement)
   string = string.replace(re, replacement) // calling it twice to catch odd/even occurences
 
@@ -22,48 +20,43 @@ export function addNbspAfterPreposition (string, locale) {
 }
 
 export function addNbspAfterAmpersand (string, locale) {
-  string = string.replace(/&nbsp;/igm, ' ')
   let pattern = '([' + locale.spaces + '])(' + locale.ampersand + ')([' + locale.spaces + '])'
   let re = new RegExp(pattern, 'g')
-  let replacement = ' $2' + locale.nbsp
+  let replacement = ' $2' + locale.nbspEntity
 
   return string.replace(re, replacement)
 }
 
 export function addNbspAfterCardinalNumber (string, locale) {
-  string = string.replace(/&nbsp;/igm, ' ')
   let pattern = '(' + locale.cardinalNumber + ')( )([' + locale.allChars + ']+)'
   let re = new RegExp(pattern, 'g')
-  let replacement = '$1' + locale.nbsp + '$3'
+  let replacement = '$1' + locale.nbspEntity + '$3'
 
   return string.replace(re, replacement)
 }
 
 export function addNbspAfterOrdinalNumber (string, locale) {
-  string = string.replace(/&nbsp;/igm, ' ')
   let pattern = '(' + locale.cardinalNumber + ')(' + locale.ordinalIndicator + ')([' + locale.spaces + ']?)([' + locale.allChars + ']+)'
   let re = new RegExp(pattern, 'g')
-  let replacement = '$1$2' + locale.nbsp + '$4'
+  let replacement = '$1$2' + locale.nbspEntity + '$4'
 
   return string.replace(re, replacement)
 }
 
 export function addNbspWithinOrdinalDate (string, locale) {
-  string = string.replace(/&nbsp;/igm, ' ')
   let pattern = '(' + locale.cardinalNumber + ')(' + locale.ordinalIndicator + ')([' + locale.spaces + ']?)(' + locale.cardinalNumber + ')(' + locale.ordinalIndicator + ')([' + locale.spaces + ']?)(' + locale.cardinalNumber + ')'
   let re = new RegExp(pattern, 'g')
-  let replacement = '$1$2' + locale.nbsp + '$4$5' + locale.nbsp + '$7'
+  let replacement = '$1$2' + locale.nbspEntity + '$4$5' + locale.nbspEntity + '$7'
 
   return string.replace(re, replacement)
 }
 
 export function addNbspAfterRomanNumeral (string, locale) {
-  string = string.replace(/&nbsp;/igm, ' ')
   // we can identify roman numeral effectively only if it has an ordinal indicator
   if (locale.romanOrdinalIndicator != '') {
     let pattern = '(\\b[' + locale.romanNumerals + ']+)(' + locale.romanOrdinalIndicator + ')([' + locale.spaces + ']?)'
     let re = new RegExp(pattern, 'g')
-    let replacement = '$1$2' + locale.nbsp
+    let replacement = '$1$2' + locale.nbspEntity
 
     return string.replace(re, replacement)
   }
@@ -72,34 +65,30 @@ export function addNbspAfterRomanNumeral (string, locale) {
 }
 
 export function addNbspAfterInitial (string, locale) {
-  string = string.replace(/&nbsp;/igm, ' ')
   let pattern = '([' + locale.uppercaseChars + ']\\.)([' + locale.spaces + '])'
   let re = new RegExp(pattern, 'g')
-  let replacement = '$1' + locale.nbsp
+  let replacement = '$1' + locale.nbspEntity
 
   return string.replace(re, replacement)
 }
 
 export function addNbspAfterSymbol (string, locale, symbol) {
-  string = string.replace(/&nbsp;/igm, ' ')
   let pattern = '(' + symbol + ')([^' + locale.spaces + '])'
   let re = new RegExp(pattern, 'g')
-  let replacement = '$1' + locale.nbsp + '$2'
+  let replacement = '$1' + locale.nbspEntity + '$2'
 
   return string.replace(re, replacement)
 }
 
 export function replaceSpacesWithNbspAfterSymbol (string, locale, symbol) {
-  string = string.replace(/&nbsp;/igm, ' ')
   let pattern = '(' + symbol + ')([' + locale.spaces + '])'
   let re = new RegExp(pattern, 'g')
-  let replacement = '$1' + locale.nbsp
+  let replacement = '$1' + locale.nbspEntity
 
   return string.replace(re, replacement)
 }
 
 export function addNbspAfterAbbreviation (string, locale) {
-  string = string.replace(/&nbsp;/igm, ' ')
   let abbreviations = locale.abbreviationsForNbsp
 
   // replace existing spaces following abbreviations with nbsp
@@ -107,7 +96,7 @@ export function addNbspAfterAbbreviation (string, locale) {
   for (var abbr in abbreviations) {
     let pattern = '(^|[^' + locale.allChars + locale.sentencePunctuation + '\\n])(' + abbreviations[abbr] + ')([' + locale.spaces + '])([' + locale.allChars + ']|' + locale.cardinalNumber + ')'
     let re = new RegExp(pattern, 'gi')
-    let replacement = '$1' + abbr + locale.nbsp + '$4'
+    let replacement = '$1' + abbr + locale.nbspEntity + '$4'
 
     string = string.replace(re, replacement)
   }
@@ -117,7 +106,7 @@ export function addNbspAfterAbbreviation (string, locale) {
   for (var abbr in abbreviations) {
     let pattern = '(^|[^' + locale.allChars + locale.sentencePunctuation + '\\n])(' + abbreviations[abbr] + '[' + locale.spaces + ']?)([' + locale.allChars + '][^\\.]|' + locale.cardinalNumber + ')'
     let re = new RegExp(pattern, 'gi')
-    let replacement = '$1' + abbr + locale.nbsp + '$3'
+    let replacement = '$1' + abbr + locale.nbspEntity + '$3'
 
     string = string.replace(re, replacement)
   }
@@ -141,6 +130,5 @@ export function fixNbsp (string, locale) {
   string = addNbspAfterRomanNumeral(string, locale)
   string = addNbspAfterInitial(string, locale)
   string = addNbspAfterAbbreviation(string, locale)
-
   return string
 }

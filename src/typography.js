@@ -30,6 +30,7 @@ import {excludeExceptions, placeExceptions} from './lib/words/exceptions'
 */
 export default function (string, locale = 'en-us', configuration) {
   let currentLocale = new Locale(locale)
+  string = string.replace(/[\s]{2,}/gi, ' ')
 
   configuration = (typeof configuration === 'undefined') ? {
     removeLines: false,
@@ -72,6 +73,7 @@ export default function (string, locale = 'en-us', configuration) {
   string = fixNbsp(string, currentLocale)
 
   string = placeExceptions(string)
+  string = string.replace(/(&nbsp;)\s/gim, '$1')
 
   return string
 }

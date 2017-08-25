@@ -1,6 +1,16 @@
 import fixTypos from '../src/typography'
 import assert from 'assert'
 
+describe('Existing &nbsp; handling', () => {
+  let testCase = { 'Nejsme lišáci. S námi vždy víte, kolik a&nbsp;za co platíte. A&nbsp;pokud se k půjčce vztahují nějaké poplatky, nikdy vás nepřekvapí.': 'Nejsme lišáci. S námi vždy víte, kolik a za co platíte. A pokud se k půjčce vztahují nějaké poplatky, nikdy vás nepřekvapí.'}
+
+  Object.keys(testCase).forEach(key => {
+    it('', () => {
+      assert.equal(fixTypos(key, 'cs'), testCase[key])
+    })
+  })
+})
+
 describe('Test consistency of internal variables', () => {
   let testCase = {
 
