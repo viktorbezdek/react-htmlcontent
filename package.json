@@ -39,9 +39,9 @@
 		"jest": "^20.0.4",
 		"jsdom": "^11.2.0",
 		"mocha": "^3.5.0",
-		"react": "^15.6.1",
+		"react": "^16.3.2",
 		"react-addons-test-utils": "^15.6.0",
-		"react-dom": "^15.6.1",
+		"react-dom": "^16.3.2",
 		"sinon": "^3.2.1"
 	},
 	"peerDependencies": {
