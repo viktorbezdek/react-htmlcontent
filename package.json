@@ -19,11 +19,11 @@
 		"build-storybook": "build-storybook"
 	},
 	"devDependencies": {
-		"@storybook/react": "^3.2.8",
+		"@storybook/react": "^5.3.8",
 		"babel-cli": "^6.26.0",
 		"babel-core": "^6.26.0",
-		"babel-eslint": "^7.2.3",
-		"babel-loader": "^7.1.2",
+		"babel-eslint": "^10.0.3",
+		"babel-loader": "^8.0.6",
 		"babel-plugin-transform-object-rest-spread": "^6.26.0",
 		"babel-plugin-transform-runtime": "^6.23.0",
 		"babel-polyfill": "^6.26.0",
@@ -32,17 +32,17 @@
 		"babel-preset-stage-0": "^6.24.1",
 		"babel-runtime": "^6.26.0",
 		"chai": "^4.1.1",
-		"enzyme": "^2.9.1",
-		"eslint": "^4.5.0",
-		"eslint-config-frack": "^0.10.9",
-		"git-url-parse": "^7.0.0",
-		"jest": "^20.0.4",
-		"jsdom": "^11.2.0",
-		"mocha": "^3.5.0",
+		"enzyme": "^3.11.0",
+		"eslint": "^6.8.0",
+		"eslint-config-frack": "^2.2.3",
+		"git-url-parse": "^11.1.2",
+		"jest": "^25.1.0",
+		"jsdom": "^16.0.1",
+		"mocha": "^7.0.0",
 		"react": "^16.3.2",
 		"react-addons-test-utils": "^15.6.0",
 		"react-dom": "^16.3.2",
-		"sinon": "^3.2.1"
+		"sinon": "^8.1.1"
 	},
 	"peerDependencies": {
 		"react": "^16.3.2"
